@@ -3,6 +3,15 @@
 @mobile: ~"(max-width: 767px)";
 @tablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
+.mb-8 {
+    margin-bottom: 8px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
 body {
     background-color: @bgColor;
     color: @textColor;
@@ -15,11 +24,39 @@ body {
 
     @media @mobile {
         max-width: 70%;
-        background-color: red;
     }
 
     @media @tablet { 
         max-width: 80%;
-        background-color: yellow;
+    }
+}
+
+header {
+    padding: 24px;
+
+    .profile-avatar {
+
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+
+    &-name {
+        font-size: 16px;
+        .mb-8();
+    }
+
+    &-subtitle {
+        font-size: 14px;
+        .mb-8();
+    }
+
+    &-description {
+        font-size: 14px;
+        opacity: 0.7;
     }
 }
