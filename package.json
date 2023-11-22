@@ -27,7 +27,6 @@
     "interpret": "^1.4.0",
     "is-core-module": "^2.13.1",
     "is-what": "^3.14.1",
-    "less-watch-compiler": "^1.16.3",
     "make-dir": "^2.1.0",
     "mime": "^1.6.0",
     "min-document": "^2.19.0",
@@ -53,9 +52,11 @@
     "wrappy": "^1.0.2"
   },
   "devDependencies": {
-    "less": "^4.2.0"
+    "less": "^4.2.0",
+    "less-watch-compiler": "^1.16.3"
   },
   "scripts": {
+    "less": "less-watch-compiler ./src/styles ./build/styles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
