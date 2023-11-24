@@ -8,6 +8,12 @@
     display: flex;
 }
 
+.containers {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
 @mobile: ~"(max-width: 767px)";
 @tablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
@@ -31,10 +37,10 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    padding: 8px 24px;
 
     .container {
         .d-flex();
+        .containers();
         justify-content: space-between;
         align-items: center;
         padding: 16px 0;
@@ -60,9 +66,7 @@ section {
     padding: 56px 0;
 
     .container {
-        max-width: 1024px;
-        width: 100%;
-        margin: 0 auto;
+        .containers();
     
         @media @tablet {
             max-width: 80%;
@@ -114,6 +118,4 @@ section {
             }
         }
     }
-
-
 }
