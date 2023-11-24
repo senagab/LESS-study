@@ -1,6 +1,119 @@
 @import 'mapas.less';
 
-body {
-    background-color: #colors(backgroundColor);
+.d-block{
+    display: block;
 }
 
+.d-flex{
+    display: flex;
+}
+
+@mobile: ~"(max-width: 767px)";
+@tablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    background-color: #colors[mainColor];
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding: 8px 24px;
+
+    .container {
+        .d-flex();
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+
+        .menu {
+            .d-flex();
+    
+            li {
+                font-weight: bold;
+                margin-left: 24px;
+                
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+    
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+
+    .container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+    
+        @media @tablet {
+            max-width: 80%;
+        }
+    
+        .products {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 32.66%);
+            column-gap: 1%;
+            row-gap: 4%;
+            width: 100%;
+    
+            @media @tablet {
+                grid-template-columns: repeat(2, 48.5%);
+                column-gap: 3%;
+            }
+    
+            @media @mobile {
+                .d-block();
+            }
+    
+            .product-item  {
+    
+                @media @mobile {
+                    margin-bottom: 32px;
+                }
+    
+                img {
+                    width: 100%;
+                    border-radius: 16px;
+                }
+            }
+    
+            .product-button {
+                .d-block();
+                background-color: #colors[secondaryColor];
+                color: #fff;
+                text-align: center;
+                padding: 8px 0;
+                border-radius: 8px;
+                margin-top: 8px;
+                text-decoration: none;
+    
+                &:hover {
+                    background-color: #colors[hoverSecondaryColor];
+                }
+    
+            }
+        }
+    }
+
+
+}
